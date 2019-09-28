@@ -1,0 +1,2 @@
+# RedLooper
+Simple Loop Manager
