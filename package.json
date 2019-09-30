@@ -1,11 +1,11 @@
 {
   "name": "red-looper",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Simple Loop Manager",
-  "main": "RedLooper.js",
+  "main": "src/RedLooper.js",
   "scripts": {
     "npmPublish": "npm --no-git-tag-version version patch && npm adduser && npm publish",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/redcamel/RedLooper/issues"
   },
-  "homepage": "https://github.com/redcamel/RedLooper#readme"
+  "homepage": "https://github.com/redcamel/RedLooper#readme",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
 }
