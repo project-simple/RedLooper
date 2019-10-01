@@ -1,5 +1,10 @@
 "use strict";
-
+;(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+		typeof define === 'function' && define.amd ? define(factory) :
+			(global.RedLooper = factory());
+}(this, (function () {
+	'use strict';
 	var RedLooper;
 	var tick;
 	var loopList_main;
@@ -19,9 +24,9 @@
 	var makeMethods = function (targetMap, targetList) {
 		return {
 			add: function (key, handler) {
-				typeof key == 'string' || new Error('key allow only sting. input value : ' + key);
-				typeof handler == 'function' || new Error('handler allow only function. input value : ' + handler);
-				if(targetMap[key]) new Error('already defined key. input value : ' + key);
+				if(typeof key != 'string' )throw new Error('key allow only sting. input value : ' + key);
+				if(typeof handler != 'function')throw new Error('handler allow only function. input value : ' + handler);
+				if(targetMap[key]) throw new Error('already defined key. input value : ' + key);
 				targetMap[key] = handler;
 				targetList.push(handler);
 			},
@@ -62,4 +67,6 @@
 		// delAfterList:delAfterList,
 		// delAll:delAll,
 	};
-	Object.freeze(RedLooper);
+
+	return RedLooper;
+})));
