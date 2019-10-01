@@ -1,10 +1,5 @@
 "use strict";
-;(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-		typeof define === 'function' && define.amd ? define(factory) :
-			(global.RedLooper = factory());
-}(this, (function () {
-	'use strict';
+
 	var RedLooper;
 	var tick;
 	var loopList_main;
@@ -68,5 +63,3 @@
 		// delAll:delAll,
 	};
 	Object.freeze(RedLooper);
-	return RedLooper;
-})));

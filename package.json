@@ -1,11 +1,12 @@
 {
-  "name": "red-looper",
+  "name": "poject-simple-looper",
   "version": "1.0.2",
   "description": "Simple Loop Manager",
-  "main": "src/RedLooper.js",
   "scripts": {
     "npmPublish": "npm --no-git-tag-version version patch && npm adduser && npm publish",
-    "test": "jest --watch"
+    "mochaTest": "mocha testMocha/*.test.js",
+    "mochaTest:browser": "live-server --port=9001 --entry-file=testIndex.html",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,12 @@
   },
   "homepage": "https://github.com/redcamel/RedLooper#readme",
   "devDependencies": {
-    "jest": "^24.9.0"
+    "chai": "^4.2.0",
+    "live-server": "^1.2.1",
+    "mocha": "^6.2.1",
+    "raf": "^3.4.1",
+    "value-to-text": "^1.0.9",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
   }
 }
