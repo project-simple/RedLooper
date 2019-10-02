@@ -1,6 +1,6 @@
 {
   "name": "project-simple-red-looper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple Loop Manager",
   "scripts": {
     "npmPublish": "npm --no-git-tag-version version patch && npm adduser && npm publish",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redcamel/RedLooper.git"
+    "url": "git+https://github.com/project-simple/RedLooper.git"
   },
   "keywords": [
     "loop",
@@ -22,9 +22,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/redcamel/RedLooper/issues"
+    "url": "https://github.com/project-simple/RedLooper/issues"
   },
-  "homepage": "https://github.com/redcamel/RedLooper#readme",
+  "homepage": "https://github.com/project-simple/RedLooper",
   "devDependencies": {
     "chai": "^4.2.0",
     "live-server": "^1.2.1",
