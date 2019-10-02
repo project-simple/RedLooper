@@ -21,3 +21,4 @@ npm install project-simple-red-looper --save-dev
    // The registered loop is executed every frame.
 </script>
 ```
+TODO - DOC
