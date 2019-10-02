@@ -15,37 +15,37 @@ describe('Test beforeLoop',function() {
 	describe('Test getBeforeLoop', function () {
 		var testFunc = function () {
 			console.log("testFunc")
-		}
+		};
 		it('test - getBeforeLoop', function () {
 			expect(RedLooper.getBeforeLoop('getTest')).to.be.undefined;
 		});
 		it('test - addBeforeLoop', function () {
-			RedLooper.addBeforeLoop('getTest', testFunc)
+			RedLooper.addBeforeLoop('getTest', testFunc);
 			expect(RedLooper.getBeforeLoop('getTest')).to.be.equal(testFunc);
 		});
 	});
 	describe('Test getBeforeLoopList', function () {
 		var testFunc = function () {
 			console.log("testFunc")
-		}
+		};
 		var testFunc2 = function () {
 			console.log("testFunc2")
-		}
+		};
 		it('test - getBeforeLoopList', function () {
 			expect(RedLooper.getBeforeLoopList()).to.have.lengthOf(0);
 		});
 		it('test - getBeforeLoopList', function () {
-			RedLooper.addBeforeLoop('getTest', testFunc)
+			RedLooper.addBeforeLoop('getTest', testFunc);
 			expect(RedLooper.getBeforeLoopList()).to.have.lengthOf(1);
 		});
 		it('test - getBeforeLoopList', function () {
-			RedLooper.addBeforeLoop('getTest1', testFunc)
-			RedLooper.addBeforeLoop('getTest2', testFunc2)
+			RedLooper.addBeforeLoop('getTest1', testFunc);
+			RedLooper.addBeforeLoop('getTest2', testFunc2);
 			expect(RedLooper.getBeforeLoopList()[0]).to.be.equal(testFunc);
 		});
 		it('test - getBeforeLoopList', function () {
-			RedLooper.addBeforeLoop('getTest1', testFunc)
-			RedLooper.addBeforeLoop('getTest2', testFunc2)
+			RedLooper.addBeforeLoop('getTest1', testFunc);
+			RedLooper.addBeforeLoop('getTest2', testFunc2);
 			expect(RedLooper.getBeforeLoopList()[1]).to.be.equal(testFunc2);
 		});
 	});
@@ -63,7 +63,7 @@ describe('Test beforeLoop',function() {
 				RedLooper.addBeforeLoop('test', function () {
 				});
 			} catch (e) {
-				console.log(e)
+				console.log(e);
 				result = false
 			}
 			expect(result).to.be.false;
@@ -103,7 +103,7 @@ describe('Test beforeLoop',function() {
 			expect(RedLooper.hasBeforeLoop('test1')).to.be.false;
 		});
 	});
-})
+});
 describe('Test mainLoop',function() {
 	afterEach(function(){
 		RedLooper.delAll();
@@ -121,37 +121,37 @@ describe('Test mainLoop',function() {
 	describe('Test getMainLoop', function () {
 		var testFunc = function () {
 			console.log("testFunc")
-		}
+		};
 		it('test - getMainLoop', function () {
 			expect(RedLooper.getMainLoop('getTest')).to.be.undefined;
 		});
 		it('test - addMainLoop', function () {
-			RedLooper.addMainLoop('getTest', testFunc)
+			RedLooper.addMainLoop('getTest', testFunc);
 			expect(RedLooper.getMainLoop('getTest')).to.be.equal(testFunc);
 		});
 	});
 	describe('Test getMainLoopList', function () {
 		var testFunc = function () {
 			console.log("testFunc")
-		}
+		};
 		var testFunc2 = function () {
 			console.log("testFunc2")
-		}
+		};
 		it('test - getMainLoopList', function () {
 			expect(RedLooper.getMainLoopList()).to.have.lengthOf(0);
 		});
 		it('test - getMainLoopList', function () {
-			RedLooper.addMainLoop('getTest', testFunc)
+			RedLooper.addMainLoop('getTest', testFunc);
 			expect(RedLooper.getMainLoopList()).to.have.lengthOf(1);
 		});
 		it('test - getMainLoopList', function () {
-			RedLooper.addMainLoop('getTest1', testFunc)
-			RedLooper.addMainLoop('getTest2', testFunc2)
+			RedLooper.addMainLoop('getTest1', testFunc);
+			RedLooper.addMainLoop('getTest2', testFunc2);
 			expect(RedLooper.getMainLoopList()[0]).to.be.equal(testFunc);
 		});
 		it('test - getMainLoopList', function () {
-			RedLooper.addMainLoop('getTest1', testFunc)
-			RedLooper.addMainLoop('getTest2', testFunc2)
+			RedLooper.addMainLoop('getTest1', testFunc);
+			RedLooper.addMainLoop('getTest2', testFunc2);
 			expect(RedLooper.getMainLoopList()[1]).to.be.equal(testFunc2);
 		});
 	});
@@ -169,7 +169,7 @@ describe('Test mainLoop',function() {
 				RedLooper.addMainLoop('test', function () {
 				});
 			} catch (e) {
-				console.log(e)
+				console.log(e);
 				result = false
 			}
 			expect(result).to.be.false;
@@ -227,37 +227,37 @@ describe('Test afterLoop',function() {
 	describe('Test getAfterLoop', function () {
 		var testFunc = function () {
 			console.log("testFunc")
-		}
+		};
 		it('test - getAfterLoop', function () {
 			expect(RedLooper.getAfterLoop('getTest')).to.be.undefined;
 		});
 		it('test - addAfterLoop', function () {
-			RedLooper.addAfterLoop('getTest', testFunc)
+			RedLooper.addAfterLoop('getTest', testFunc);
 			expect(RedLooper.getAfterLoop('getTest')).to.be.equal(testFunc);
 		});
 	});
 	describe('Test getAfterLoopList', function () {
 		var testFunc = function () {
 			console.log("testFunc")
-		}
+		};
 		var testFunc2 = function () {
 			console.log("testFunc2")
-		}
+		};
 		it('test - getAfterLoopList', function () {
 			expect(RedLooper.getAfterLoopList()).to.have.lengthOf(0);
 		});
 		it('test - getAfterLoopList', function () {
-			RedLooper.addAfterLoop('getTest', testFunc)
+			RedLooper.addAfterLoop('getTest', testFunc);
 			expect(RedLooper.getAfterLoopList()).to.have.lengthOf(1);
 		});
 		it('test - getAfterLoopList', function () {
-			RedLooper.addAfterLoop('getTest1', testFunc)
-			RedLooper.addAfterLoop('getTest2', testFunc2)
+			RedLooper.addAfterLoop('getTest1', testFunc);
+			RedLooper.addAfterLoop('getTest2', testFunc2);
 			expect(RedLooper.getAfterLoopList()[0]).to.be.equal(testFunc);
 		});
 		it('test - getAfterLoopList', function () {
-			RedLooper.addAfterLoop('getTest1', testFunc)
-			RedLooper.addAfterLoop('getTest2', testFunc2)
+			RedLooper.addAfterLoop('getTest1', testFunc);
+			RedLooper.addAfterLoop('getTest2', testFunc2);
 			expect(RedLooper.getAfterLoopList()[1]).to.be.equal(testFunc2);
 		});
 	});
@@ -275,7 +275,7 @@ describe('Test afterLoop',function() {
 				RedLooper.addAfterLoop('test', function () {
 				});
 			} catch (e) {
-				console.log(e)
+				console.log(e);
 				result = false
 			}
 			expect(result).to.be.false;
@@ -315,4 +315,4 @@ describe('Test afterLoop',function() {
 			expect(RedLooper.hasAfterLoop('test1')).to.be.false;
 		});
 	});
-})
+});

@@ -20,17 +20,17 @@ Copyright (c) 2019 ~ By RedCamel.
 	tick = function (time) {
 		var i, len;
 		var tList;
-		tList = totalLoopMap.beforeLoop.list
+		tList = totalLoopMap.beforeLoop.list;
 		i = 0;
 		len = tList.length;
 		for (i; i < len; i++) tList[i](time);
 		//
-		tList = totalLoopMap.mainLoop.list
+		tList = totalLoopMap.mainLoop.list;
 		i = 0;
 		len = tList.length;
 		for (i; i < len; i++) tList[i](time);
 		//
-		tList = totalLoopMap.afterLoop.list
+		tList = totalLoopMap.afterLoop.list;
 		i = 0;
 		len = tList.length;
 		for (i; i < len; i++) tList[i](time);
@@ -60,22 +60,22 @@ Copyright (c) 2019 ~ By RedCamel.
 			},
 			del: function (key) {
 				var t0;
-				t0 = targetList.indexOf(targetMap[key])
+				t0 = targetList.indexOf(targetMap[key]);
 				if (t0 > -1) {
-					targetList.splice(t0, 1)
+					targetList.splice(t0, 1);
 					delete targetMap[key]
 				}
 			},
 			delAll: function () {
-				targetMap = totalLoopMap[title].keyMap={};
-				targetList = totalLoopMap[title].list=[]
+				targetMap = totalLoopMap[title].keyMap = {};
+				targetList = totalLoopMap[title].list = []
 			}
 		}
-	}
+	};
 	var mainLoopInfo, beforeLoopInfo, afterLoopInfo;
 	mainLoopInfo = makeMethods('mainLoop');
 	beforeLoopInfo = makeMethods('beforeLoop');
-	afterLoopInfo = makeMethods('afterLoop')
+	afterLoopInfo = makeMethods('afterLoop');
 
 	RedLooper = {
 		addBeforeLoop: beforeLoopInfo.add,
@@ -106,8 +106,7 @@ Copyright (c) 2019 ~ By RedCamel.
 			beforeLoopInfo.delAll();
 			mainLoopInfo.delAll();
 			afterLoopInfo.delAll();
-		},
+		}
 	};
-
 	return RedLooper;
 })));

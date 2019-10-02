@@ -5,5 +5,5 @@ const RedLooper = require('../src/RedLooper');
 const valueToText =require( "value-to-text");
 const fs = require("fs");
 const data = fs.readFileSync("./testMocha/RedLooper.run.js","utf8",function (err,data){console.log(err)});
-console.log("data")
+console.log("data");
 eval(data);

@@ -22,7 +22,7 @@ npm install project-simple-red-looper --save-dev
 </script>
 ```
 
-#### Run Cycle
+# Run Cycle
 ```
 per frame
 |--> run beforeLoops
@@ -31,7 +31,7 @@ per frame
 
 ```
 
-#### API
+# API
 
 #### RedLooper.addMainLoop(key:String, handler:Function)
 * Usage is the same for addBeforeLoop and addAfterLoop.
