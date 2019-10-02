@@ -1,5 +1,5 @@
 describe('Test beforeLoop',function() {
-	beforeEach(function(){
+	afterEach(function(){
 		RedLooper.delAll();
 	});
 	describe('Test hasBeforeLoop', function () {
@@ -105,7 +105,7 @@ describe('Test beforeLoop',function() {
 	});
 })
 describe('Test mainLoop',function() {
-	beforeEach(function(){
+	afterEach(function(){
 		RedLooper.delAll();
 	});
 	describe('Test hasMainLoop', function () {
@@ -211,7 +211,7 @@ describe('Test mainLoop',function() {
 	});
 });
 describe('Test afterLoop',function() {
-	beforeEach(function(){
+	afterEach(function(){
 		RedLooper.delAll();
 	});
 	describe('Test hasAfterLoop', function () {

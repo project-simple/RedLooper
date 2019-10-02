@@ -1,4 +1,9 @@
 "use strict";
+/*!
+@author RedCamel / https://github.com/redcamel / webseon@gmail.com
+MIT License
+Copyright (c) 2019 ~ By RedCamel.
+*/
 ;(function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 		typeof define === 'function' && define.amd ? define(factory) :
@@ -62,8 +67,8 @@
 				}
 			},
 			delAll: function () {
-				targetMap = {};
-				targetList.length = 0;
+				targetMap = totalLoopMap[title].keyMap={};
+				targetList = totalLoopMap[title].list=[]
 			}
 		}
 	}
