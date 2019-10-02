@@ -33,8 +33,8 @@
 		return {
 			add: function (key, handler) {
 				if (typeof key != 'string') throw new Error(title + ' - key allow only sting. input value : ' + key);
-				if (typeof handler != 'function') throw new Error('handler allow only function. input value : ' + handler);
-				if (targetMap[key]) throw new Error('already defined key. input value : ' + key);
+				if (typeof handler != 'function') throw new Error(title + ' - handler allow only function. input value : ' + handler);
+				if (targetMap[key]) throw new Error(title + ' - already defined key. input value : ' + key);
 				targetMap[key] = handler;
 				targetList.push(handler);
 			},
