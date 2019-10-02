@@ -1,9 +1,10 @@
 {
   "name": "project-simple-red-looper",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple Loop Manager",
   "scripts": {
-    "npmPublish": "npm --no-git-tag-version version patch && npm adduser && npm publish",
+    "npmVersionPatch": "npm --no-git-tag-version version patch",
+    "npmPublish": "npm adduser && npm publish",
     "mochaTest": "mocha testMocha/*.test.js --watch   --allow-uncaught  ",
     "mochaTest:browser": "live-server --port=9001 --entry-file=testRun_browser.html"
   },
