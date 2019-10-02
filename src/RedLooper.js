@@ -7,31 +7,45 @@
 	'use strict';
 	var RedLooper;
 	var tick;
-	var loopList_main;
-	var loopMap = {};
-	loopList_main = []
+	var totalLoopMap = {
+		beforeLoop: {keyMap: {}, list: []},
+		mainLoop: {keyMap: {}, list: []},
+		afterLoop: {keyMap: {}, list: []}
+	};
 	tick = function (time) {
 		var i, len;
+		var tList;
+		tList = totalLoopMap.mainLoop.list
 		i = 0;
-		len = loopList_main.length;
+		len = tList.length;
 		for (i; i < len; i++) {
 
-			loopList_main[i](time)
+			tList[i](time)
 		}
 		requestAnimationFrame(tick)
 	};
 	requestAnimationFrame(tick);
-	var makeMethods = function (targetMap, targetList) {
+	var makeMethods = function (title) {
+		var targetMap, targetList;
+		targetMap = totalLoopMap[title].keyMap;
+		targetList = totalLoopMap[title].list;
+
 		return {
 			add: function (key, handler) {
-				if(typeof key != 'string' )throw new Error('key allow only sting. input value : ' + key);
-				if(typeof handler != 'function')throw new Error('handler allow only function. input value : ' + handler);
-				if(targetMap[key]) throw new Error('already defined key. input value : ' + key);
+				if (typeof key != 'string') throw new Error(title + ' - key allow only sting. input value : ' + key);
+				if (typeof handler != 'function') throw new Error('handler allow only function. input value : ' + handler);
+				if (targetMap[key]) throw new Error('already defined key. input value : ' + key);
 				targetMap[key] = handler;
 				targetList.push(handler);
 			},
 			has: function (key) {
 				return targetMap.hasOwnProperty(key);
+			},
+			get: function (key) {
+				return targetMap[key]
+			},
+			getList: function () {
+				return targetList.concat()
 			},
 			del: function (key) {
 				var t0;
@@ -47,25 +61,41 @@
 			}
 		}
 	}
-	var t0;
-	t0 = makeMethods(loopMap, loopList_main)
+	var mainLoopInfo, beforeLoopInfo, afterLoopInfo;
+	mainLoopInfo = makeMethods('mainLoop');
+	beforeLoopInfo = makeMethods('beforeLoop');
+	afterLoopInfo = makeMethods('afterLoop')
 
 	RedLooper = {
-		add: t0.add,
-		// addBefore:addBefore,
-		// addAfter:addAfter,
-		// //
-		has: t0.has,
-		// hasBeforeList:hasBeforeList,
-		// hasMainList:hasMainList,
-		// hasAfterList:hasAfterList,
-		// //
-		del: t0.del,
-		delAll: t0.delAll
-		// delBeforeList:delBeforeList,
-		// delMainList:delMainList,
-		// delAfterList:delAfterList,
-		// delAll:delAll,
+		addBeforeLoop: beforeLoopInfo.add,
+		addMainLoop: mainLoopInfo.add,
+		addAfterLoop: afterLoopInfo.add,
+		//
+		hasBeforeLoop: beforeLoopInfo.has,
+		hasMainLoop: mainLoopInfo.has,
+		hasAfterLoop: afterLoopInfo.has,
+		//
+		getBeforeLoop: beforeLoopInfo.get,
+		getMainLoop: mainLoopInfo.get,
+		getAfterLoop: afterLoopInfo.get,
+		//
+		getBeforeLoopList: beforeLoopInfo.getList,
+		getMainLoopList: mainLoopInfo.getList,
+		getAfterLoopList: afterLoopInfo.getList,
+		//
+		delBeforeLoop: beforeLoopInfo.del,
+		delMainLoop: mainLoopInfo.del,
+		delAfterLoop: afterLoopInfo.del,
+		//
+		delBeforeLoopAll: beforeLoopInfo.delAll,
+		delMainLoopAll: mainLoopInfo.delAll,
+		delAfterLoopAll: afterLoopInfo.delAll,
+		//
+		delAll: function () {
+			beforeLoopInfo.delAll();
+			mainLoopInfo.delAll();
+			afterLoopInfo.delAll();
+		},
 	};
 
 	return RedLooper;

@@ -4,8 +4,8 @@
   "description": "Simple Loop Manager",
   "scripts": {
     "npmPublish": "npm --no-git-tag-version version patch && npm adduser && npm publish",
-    "mochaTest": "mocha testMocha/*.test.js",
-    "mochaTest:browser": "live-server --port=9001 --entry-file=testIndex.html"
+    "mochaTest": "mocha testMocha/*.test.js --watch   --allow-uncaught  ",
+    "mochaTest:browser": "live-server --port=9001 --entry-file=testRun_browser.html"
   },
   "repository": {
     "type": "git",
