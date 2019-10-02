@@ -15,13 +15,20 @@
 	tick = function (time) {
 		var i, len;
 		var tList;
+		tList = totalLoopMap.beforeLoop.list
+		i = 0;
+		len = tList.length;
+		for (i; i < len; i++) tList[i](time);
+		//
 		tList = totalLoopMap.mainLoop.list
 		i = 0;
 		len = tList.length;
-		for (i; i < len; i++) {
-
-			tList[i](time)
-		}
+		for (i; i < len; i++) tList[i](time);
+		//
+		tList = totalLoopMap.afterLoop.list
+		i = 0;
+		len = tList.length;
+		for (i; i < len; i++) tList[i](time);
 		requestAnimationFrame(tick)
 	};
 	requestAnimationFrame(tick);
@@ -29,7 +36,6 @@
 		var targetMap, targetList;
 		targetMap = totalLoopMap[title].keyMap;
 		targetList = totalLoopMap[title].list;
-
 		return {
 			add: function (key, handler) {
 				if (typeof key != 'string') throw new Error(title + ' - key allow only sting. input value : ' + key);
