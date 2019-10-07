@@ -63,7 +63,7 @@ describe('Test beforeLoop',function() {
 				RedLooper.addBeforeLoop('test', function () {
 				});
 			} catch (e) {
-				console.log(e);
+				// console.log(e);
 				result = false
 			}
 			expect(result).to.be.false;
@@ -75,7 +75,7 @@ describe('Test beforeLoop',function() {
 					RedLooper.addBeforeLoop(v, function () {
 					})
 				} catch (e) {
-					console.log(e)
+					// console.log(e)
 				}
 				expect(RedLooper.hasBeforeLoop(v)).to.be.false;
 			});
@@ -169,7 +169,7 @@ describe('Test mainLoop',function() {
 				RedLooper.addMainLoop('test', function () {
 				});
 			} catch (e) {
-				console.log(e);
+				// console.log(e);
 				result = false
 			}
 			expect(result).to.be.false;
@@ -181,7 +181,7 @@ describe('Test mainLoop',function() {
 					RedLooper.addMainLoop(v, function () {
 					})
 				} catch (e) {
-					console.log(e)
+					// console.log(e)
 				}
 				expect(RedLooper.hasMainLoop(v)).to.be.false;
 			});
@@ -275,7 +275,7 @@ describe('Test afterLoop',function() {
 				RedLooper.addAfterLoop('test', function () {
 				});
 			} catch (e) {
-				console.log(e);
+				// console.log(e);
 				result = false
 			}
 			expect(result).to.be.false;
@@ -287,7 +287,7 @@ describe('Test afterLoop',function() {
 					RedLooper.addAfterLoop(v, function () {
 					})
 				} catch (e) {
-					console.log(e)
+					// console.log(e)
 				}
 				expect(RedLooper.hasAfterLoop(v)).to.be.false;
 			});

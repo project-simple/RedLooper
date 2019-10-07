@@ -1,7 +1,8 @@
 {
   "name": "project-simple-red-looper",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Simple Loop Manager",
+  "main": "RedLooper.js",
   "scripts": {
     "npmVersionPatch": "npm --no-git-tag-version version patch",
     "npmPublish": "npm adduser && npm publish",
