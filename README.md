@@ -12,6 +12,9 @@ github - [here](https://github.com/project-simple/RedLooper)
 ```npm
 npm install project-simple-red-looper --save-dev
 ```
+```
+import RedLooper from 'project-simple-red-looper';
+```
 #### browser
 ```html
 <script src="https://project-simple.github.io/RedLooper/src/RedLooper.js"></script>

@@ -1,6 +1,6 @@
 {
   "name": "project-simple-red-looper",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Simple Loop Manager",
   "main": "RedLooper.js",
   "scripts": {
