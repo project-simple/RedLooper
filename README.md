@@ -20,7 +20,6 @@ import RedLooper from 'project-simple-red-looper';
 <script src="https://project-simple.github.io/RedLooper/src/RedLooper.js"></script>
 <script>
    RedLooper.addMainLoop('testMainLoop1',function(){ console.log('testMainLoop1')});
-   RedLooper.addMainLoop('testMainLoop1',function(){ console.log('testMainLoop1')});
    // The registered loop is executed every frame.
 </script>
 ```
