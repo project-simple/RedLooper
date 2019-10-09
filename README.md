@@ -17,7 +17,7 @@ import RedLooper from 'project-simple-red-looper';
 ```
 #### browser
 ```html
-<script src="https://project-simple.github.io/RedLooper/src/RedLooper.js"></script>
+<script src="https://project-simple.github.io/RedLooper/RedLooper.js"></script>
 <script>
    RedLooper.addMainLoop('testMainLoop1',function(){ console.log('testMainLoop1')});
    // The registered loop is executed every frame.
